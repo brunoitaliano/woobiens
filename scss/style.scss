@@ -1,0 +1,349 @@
+/*
+Theme Name: Bootstrap 4 Sass
+Description: Bootstrap 4 with Sass
+*/
+
+// import files
+@import "import";
+
+/* GENERAL STYLES
+-------------------------------------------------*/
+
+body {
+  //background: $white;
+  font-family: $tillium;
+  //background-color: $background-grey;
+
+}
+
+
+/* COLORS
+--------------------------------------------------*/
+
+a {
+  color: $accent-shade;
+}
+
+.bg-inverse {
+  background: $primary-shade !important;
+}
+
+.site-footer {
+  background: $white;
+}
+
+.menu--main li a {
+  color: $primary-shade;
+}
+
+.menu--account li a {
+  color: $primary-shade;
+}
+
+.site-name-slogan a {
+  text-decoration: none;
+}
+
+.card-group img {
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+
+.card-group .field--type-image {
+  margin: 0
+}
+
+.slick {
+  width: 100%;
+}
+
+.slick > div {
+  margin: 0 15px;
+}
+
+// OVERRIDES WOOCOMPO
+
+
+.breadcrumb {
+  background-color: transparent;
+}
+
+.block-page-title-block {
+  background-color: $gray-100;
+  padding: 5px 0 5px 10px;
+  border-left: 5px solid $green-logo;
+  //margin-left: 15px;
+
+}
+
+// Articles
+
+.node--type-article {
+  .field--name-field-blog-categories, .field--name-field-tassonomia-interna {
+    @include link-in-block;
+  }
+
+  .field--name-field-blog-categories {
+    a::before {
+      content: "🏷 - ";
+    }
+  }
+
+  .field--name-field-tassonomia-interna {
+    a::before {
+      content: "‍📌 - ";
+    }
+  }
+}
+
+// Views-card
+
+
+.views-card {
+  .tassonomia {
+    color: $hover;
+
+    a {
+      color: $hover;
+      font-variant: small-caps;
+    }
+
+    a:hover {
+      color: $hover-plus;
+      text-decoration: none;
+    }
+  }
+
+  .views-field-field-image {
+    img:hover {
+      border: 3px solid $hover;
+    }
+
+  }
+
+  .card-title {
+    line-height: 0.9;
+    max-width: 95%;
+
+    a {
+      font-size: 22px;
+      line-height: 1 !important;
+    }
+  }
+
+  .views-field-body {
+    max-width: 95%;
+
+    p {
+      color: $menuColor;
+    }
+
+    p::after {
+      content: "...";
+    }
+  }
+}
+
+//Side-bar
+.sidebar .block {
+  border-bottom: 1px solid $gray-400;
+  margin: 0;
+}
+
+.sidebar_first, .site-footer__top {
+  .leggere-la-musica, .storia-della-musica, .microcosmo {
+    @include link-in-block;
+  }
+
+  .index {
+    margin-left: 1.1rem;
+
+    a {
+      font-size: 1.2em !important;
+      font-variant: small-caps;
+      line-height: 1em;
+    }
+  }
+}
+
+.featured-top {
+  margin-left: 10px;
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.featured-bottom {
+  border-top: 1px solid $gray-200;
+  padding-top: 20px;
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+
+  .leggere-la-musica, .storia-della-musica, .microcosmo {
+    min-width: 319px;
+    @include link-in-block;
+    border-bottom: 1px solid $gray-200;
+    margin-left: 32px;
+
+    a {
+      line-height: 2em;
+    }
+  }
+
+  .index, .user {
+    padding-top: 20px;
+    margin-left: 2.1rem;
+
+    a {
+      font-size: 1.2em !important;
+      font-variant: small-caps;
+      line-height: 2em;
+    }
+  }
+}
+
+// site-footer bottom
+
+.site-footer__bottom .block {
+  margin: 0.5rem auto !important;
+  border-top: 1px solid $gray-200;
+}
+
+// tutti musica
+
+.view-tutti-musica {
+  margin-left: 50px;
+
+  h3 {
+    a {
+      color: $gary-400;
+      font-size: 0.9em;
+    }
+  }
+
+  h5 {
+    a {
+      color: $menuColor;
+      font-size: 0.8em;
+    }
+  }
+}
+
+// Inline Scripts
+
+.embedded-entity, .donazione {
+  @include donation;
+}
+
+// adv
+
+.adv {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 320px;
+  border: 1px solid $green-logo;
+  padding: 20px;
+
+  .field--name-title {
+    display: none;
+  }
+
+  .field--name-field-image, .field--name-field-field-adv-image, .field--name-field-adv-image  {
+    align-self: center;
+    justify-content: center;
+    max-width: 260px;
+    margin: 0 auto;
+
+    img {
+      align-self: center;
+      justify-content: center;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .field--name-field-adv-text {
+    margin: 20px auto;
+    align-self: center;
+    justify-content: center;
+    color: $gary-400;
+    text-align: center;
+  }
+
+  .field--name-field-adv-link {
+    align-self: center;
+    justify-content: center;
+    width: 150px;
+    border: 1px solid #bfbff1;
+    padding: 10px;
+    text-align: center;
+    background-color: yellow;
+    margin: 0 auto;
+
+    a {
+      text-transform: uppercase;
+      color: $hover-plus;
+      font-weight: bold;
+    }
+  }
+}
+
+.node--type-adv {
+  .field--name-field-adv-image {
+    align-self: center;
+    justify-content: center;
+    max-width: 260px;
+    margin: 0 auto;
+
+    img {
+      align-self: center;
+      justify-content: center;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .field--name-field-adv-text {
+    margin: 20px auto;
+    align-self: center;
+    justify-content: center;
+    color: $gary-400;
+    text-align: center;
+  }
+
+  .field--name-field-adv-link {
+    align-self: center;
+    justify-content: center;
+    width: 150px;
+    border: 1px solid #bfbff1;
+    padding: 10px;
+    text-align: center;
+    background-color: yellow;
+    margin: 0 auto;
+
+    a {
+      text-transform: uppercase;
+      color: $hover-plus;
+      font-weight: bold;
+    }
+  }
+}
+
+// Leggere la musica Index in Content (Inline Script block)
+
+.leggereIndex {
+  margin: 0 auto;
+  width: 320px;
+  a.leggereIndex {
+    font-weight: bold;
+  }
+}
+
+

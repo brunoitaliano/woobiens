@@ -1,0 +1,60 @@
+@mixin white-background {
+  background-color: white;
+  padding: 30px;
+}
+
+@mixin link-in-block {
+  a {
+    color: $link-widget;
+  }
+
+  a:hover {
+    color: $hover;
+    text-decoration: none;
+  }
+}
+
+// list in sidebar block
+@mixin list-in-block {
+  .item-list {
+    margin-left: 2rem;
+    font-size: $link-sidebar;
+  }
+  @include link-in-block;
+}
+
+@mixin donation {
+  .field__label {
+    display: none;
+  }
+
+  .donazione {
+    margin: 30px 5px;
+    padding: 5px;
+    background-color: whitesmoke;
+
+    .donazionetext {
+      @include media-breakpoint-up(md) {
+        max-width: 70%;
+      }
+
+      h3 {
+        color: $green-logo;
+        font-size: 1.1em;
+        font-weight: bold;
+
+      }
+      p {
+        color: black;
+        font-size: 0.9em;
+      }
+    }
+    .donazionebutton {
+      margin: 0 auto;
+      max-width: 200px;
+      padding: 10px;
+      text-align: center;
+      vertical-align: center;
+    }
+  }
+}
