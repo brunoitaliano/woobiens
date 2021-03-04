@@ -1,0 +1,8 @@
+administer httpswww:
+  title: 'Administer HTTPS/www redirects'
+  description: Allows configuration of HTTPS and www redirects.
+  restrict access: true
+bypass httpswww redirect:
+  title: 'Bypass HTTPS/www redirects'
+  description: Roles with whis permission will not be redirected to the preferred domain.
+  restrict access: true
