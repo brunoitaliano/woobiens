@@ -3,8 +3,6 @@ type: theme
 description: 'Woobiweb Bootstrap Theme.'
 # version: VERSION
 core: 8.x
-dependencies:
-  - drupal:block_styles
 core_version_requirement: ^8 || ^9
 base theme: bootstrap_barrio
 
